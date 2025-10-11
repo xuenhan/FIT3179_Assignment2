@@ -16,22 +16,44 @@
 </head>
 
 <body>
-    <h2>
-        Mean Household Economics of Malaysia by State
-    </h2>
+    <div class = "header-section">
+        <h2>
+            Mean Household Economics of Malaysia by State
+        </h2>
+    </div>
     <p class="intro">
         Household economics in Malaysia reflects the financial well-being and living standards of families across different regions. 
         Over the past few decades, Malaysia has achieved steady income growth and poverty reduction through 
         <span class="highlight">industrialisation</span>, 
         <span class="highlight">urban expansion</span>, 
-        and <span class="highlight">improved education access</span>.
+        and <span class="highlight">improved education access.</span>
     </p>
-    <div id="map-container">
-        <h3 class="map-title">Income vs Poverty Over Time</h3>
-        <div id="chloropleth_map"></div>
+    <p class = "map-insight">
+         Behind Malaysia’s steady rise in income lies a diverse story — where some states thrive while others face persistent inequality.
+    </p>
+    <div class="map-section">
+    <div class="map-explainer">
+        <h4>Understanding the Indicators</h4>
+        <p>
+        Each indicator highlights a key aspect of Malaysia’s socioeconomic landscape. 
+        <ul class="indicator-list">
+            <li><span class="explanation-highlight">Mean Income</span> — average household earnings.</li>
+            <li><span class="explanation-highlight">Mean Expenditure</span> — average household spending patterns.</li>
+            <li><span class="explanation-highlight">Poverty Rate</span> — proportion of families living below the national poverty line.</li>
+        </ul>
+        </p>
+        <p>
+        Use the dropdown to explore differences across states.
+        </p>
     </div>
     <div id="map-container">
-        <h3 class="plot-title">Malaysia Mean Income by State</h3>
+        <h3 class="map-title">Malaysia Socioeconomic Indicator by State</h3>
+        <div id="chloropleth_map"></div>
+    </div>
+    </div>
+
+    <div id="line-plot-container">
+        <h3 class="plot-title">Malaysia Mean Income and Poverty Rate by State</h3>
         <div id="lineplot"></div>
     </div>
     </div>

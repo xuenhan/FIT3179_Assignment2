@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 1000,
+  "width": 850,
   "height": 400,
-  "padding": {"left": 50, "right": 0, "top": 0, "bottom": 20},
+  "padding": {"left": 0, "right": 0, "top": 0, "bottom": 20},
   "projection": {"type": "mercator"},
   "view": {"stroke": "transparent",  "fill": "#8ccaf4"},
   "params": [
@@ -94,7 +94,7 @@
       ],
       "mark": {"type": "text", "fontSize": 12, "fontWeight": "bold", "align": "left"},
       "encoding": {
-        "x": {"value": 1010},
+        "x": {"value": 860},
         "y": {"value": -10},
         "text": {"field": "legendTitle"}
       }
