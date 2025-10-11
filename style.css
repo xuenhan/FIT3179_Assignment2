@@ -269,7 +269,7 @@ body {
   flex-wrap: nowrap; /* keep side-by-side on large screens */
   width: 100%;
   max-width: 760px;
-  margin: 0 auto 80px auto;
+  margin: 0 auto -10px auto;
   padding: 0 40px;
   box-sizing: border-box;
 }
@@ -285,7 +285,7 @@ body {
   color: #444;
   line-height: 1.4;
   font-size: 0.82em;
-  margin: 40px auto 80px auto;
+  margin: 40px auto 0px auto;
   max-width: 1400px;
 }
 
@@ -326,5 +326,104 @@ body {
   margin-top: 10px;
   margin-left: 45px;
 }
+
+/* Bump chart */
+
+.bumpchart-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px; /* space between chart and explainer */
+  flex-wrap: nowrap; /* keep side-by-side on large screens */
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto 0px auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.bumpchart-explainer{
+  flex: 0 0 200px;
+  background-color: #faf9ff;
+  border-left: 3px solid #6C67A3;
+  border-radius: 10px;
+  padding: 10px 14px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  font-family: 'Sora', sans-serif;
+  color: #444;
+  line-height: 1.4;
+  font-size: 0.82em;
+  margin: 50px auto 0px auto;
+  max-width: 1400px;
+}
+
+.bumpchart-explainer h4 {
+  color: #5E57A3;
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 1.3em;
+  font-family: 'Bree Serif', serif;
+}
+
+.bumpchart-explainer ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 8px;
+}
+
+.bumpchart-explainer li {
+  margin-bottom: 10px;
+}
+
+.bumpchart-explainer strong {
+  color: #3c366b;
+}
+
+.state-color {
+  font-weight: 600;
+}
+
+.state-color.kl {
+  color: #4B0082;   /* W.P. Kuala Lumpur - Deep Indigo */
+}
+
+.state-color.putrajaya {
+  color: #6A0DAD;   /* W.P. Putrajaya - Royal Purple */
+}
+
+.state-color.selangor {
+  color: #7B68EE;   /* Selangor - Medium Slate Blue */
+}
+
+.state-color.johor {
+  color: #4169E1;   /* Johor - Royal Blue */
+}
+
+.state-color.perlis {
+  color: #0d5db8;   /* Perlis - Dodger Blue */
+}
+
+.state-color.kedah {
+  color: #1E90FF;   /* Kedah - Light Sky Blue */
+}
+
+.plot-title {
+  font-family: 'Bree Serif', serif;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.bumpchart-output {
+  font-family: 'Sora', sans-serif;
+  text-align: center;
+  font-weight: 300;
+  font-size: 1.05em;
+  color: #444;
+  letter-spacing: 0.2px;
+  margin: 0px auto 0px auto;
+  max-width: 650px;
+}
+
+
 
 

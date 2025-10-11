@@ -19,10 +19,11 @@
     "layer": [
         {
             "data": {
-                "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Homework10/main/hh_income_state_normalized.csv"
+                "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/hh_income_state_normalized.csv"
             },
             "transform": [
                 {"filter": "datum.state == selected_state"},
+                {"filter": "toNumber(datum.year) >= 2007"},
                 {"calculate": "'Mean Income'", "as": "Category"}
             ],
             "mark": {"type": "line", "color": "steelblue"},
@@ -52,10 +53,11 @@
         },
         {
             "data": {
-                "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Homework10/main/hh_poverty_state_normalized.csv"
+                "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/hh_poverty_state_normalized.csv"
             },
             "transform": [
                 {"filter": "datum.state == selected_state"},
+                {"filter": "toNumber(datum.year) >= 2007"},
                 {"calculate": "'Poverty Rate'", "as": "Category"}
             ],
             "mark": {"type": "line", "color": "#8753d1"},
@@ -66,7 +68,7 @@
         },
         {
             "data": {
-                "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Homework10/main/hh_income_state_normalized.csv"
+                "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/hh_income_state_normalized.csv"
             },
             "transform": [
                 {"filter": "datum.state == selected_state"}
@@ -83,7 +85,7 @@
         },
         {
             "data": {
-                "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Homework10/main/hh_poverty_state_normalized.csv"
+                "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/hh_poverty_state_normalized.csv"
             },
             "transform": [
                 {"filter": "datum.state == selected_state"}
@@ -126,7 +128,7 @@
             "encoding" : {
                 "x": {"datum": "2016"},
                 "y": {"datum": 0.95},
-                "text": {"value": "Post GST Inflation"}
+                "text": {"value": "GST Implementation & Inflation"}
             }
         },
         {

@@ -5,3 +5,7 @@ vegaEmbed("#chloropleth_map", vg_1).then(function(result) {
 var vg_2 = "lineplot.vg.json";
 vegaEmbed("#lineplot", vg_2).then(function(result) {
 }).catch(console.error)
+
+var vg_3 = "bump_chart.vg.json";
+vegaEmbed("#bumpchart", vg_3).then(function(result) {
+}).catch(console.error)

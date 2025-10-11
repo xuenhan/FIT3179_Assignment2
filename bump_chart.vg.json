@@ -1,0 +1,88 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 760,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/hh_income_state_cleaned.csv",
+    "format": {"type": "csv", "parse": {"year": "number", "income_mean": "number"}}
+  },
+  "transform": [
+    {
+      "window": [{"op": "rank", "as": "rank"}],
+      "sort": [{"field": "income_mean", "order": "descending"}],
+      "groupby": ["year"]
+    }
+  ],
+  "params": [
+    {
+      "name": "selected_state",
+      "select": {"type": "point", "fields": ["state"]},
+      "bind": "legend"  
+    }
+  ],
+  "mark": {"type": "line", "point": true, "strokeWidth": 2},
+  "encoding": {
+    "x": {"field": "year", "type": "ordinal", "axis": {"title": "Year"}},
+    "y": {
+      "field": "rank",
+      "type": "quantitative",
+      "sort": "ascending",
+      "axis": {"title": "Rank (1 = Highest Income)"}
+    },
+    "color": {
+      "field": "state",
+      "type": "nominal",
+      "legend": {"title": "State"},
+      "scale": {
+        "domain": [
+          "W.P. Kuala Lumpur",
+          "W.P. Putrajaya",
+          "Selangor",
+          "Johor",
+          "Perlis",
+          "Kedah",
+          "Kelantan",
+          "Melaka",
+          "Negeri Sembilan",
+          "Pahang",
+          "Perak",
+          "Perlis",
+          "Pulau Pinang",
+          "Sabah",
+          "Sarawak",
+          "Terengganu",
+          "W.P. Labuan"
+        ],
+        "range": [
+          "#4B0082",
+          "#6A0DAD",
+          "#7B68EE",
+          "#4169E1",
+          "#0d5db8",
+          "#1E90FF",
+          "#CCCCCC",
+          "#CCCCCC",
+          "#CCCCCC",
+          "#CCCCCC",
+          "#CCCCCC",
+          "#CCCCCC",
+          "#CCCCCC",
+          "#CCCCCC",
+          "#CCCCCC",
+          "#CCCCCC",
+          "#CCCCCC"
+        ]
+      }
+    },
+    "opacity": {
+      "condition": {"param": "selected_state", "value": 1},
+      "value": 0.1  
+    },
+    "tooltip": [
+      {"field": "state", "title": "State"},
+      {"field": "year", "title": "Year"},
+      {"field": "rank", "title": "Rank"},
+      {"field": "income_mean", "title": "Income (RM)", "format": ".2f"}
+    ]
+  }
+}
