@@ -21,6 +21,8 @@
             Mean Household Economics of Malaysia by State
         </h2>
     </div>
+
+    <!-- Introduction Section -->
     <p class="intro">
         Household economics in Malaysia reflects the financial well-being and living standards of families across different regions. 
         Over the past few decades, Malaysia has achieved steady income growth and poverty reduction through 
@@ -31,31 +33,53 @@
     <p class = "map-insight">
          Behind Malaysia’s steady rise in income lies a diverse story — where some states thrive while others face persistent inequality.
     </p>
+    <div class="section-divider-text">
+            <span>Malaysia’s Socioeconomic Landscape</span>
+    </div>
     <div class="map-section">
-    <div class="map-explainer">
-        <h4>Understanding the Indicators</h4>
-        <p>
-        Each indicator highlights a key aspect of Malaysia’s socioeconomic landscape. 
-        <ul class="indicator-list">
-            <li><span class="explanation-highlight">Mean Income</span> — average household earnings.</li>
-            <li><span class="explanation-highlight">Mean Expenditure</span> — average household spending patterns.</li>
-            <li><span class="explanation-highlight">Poverty Rate</span> — proportion of families living below the national poverty line.</li>
-        </ul>
-        </p>
-        <p>
-        Use the dropdown to explore differences across states.
-        </p>
+        <div class="map-explainer">
+            <h4>Understanding the Indicators</h4>
+            <p>
+            Each indicator highlights a key aspect of Malaysia’s socioeconomic landscape. 
+            <ul class="indicator-list">
+                <li><span class="explanation-highlight">Mean Income</span> — average household earnings.</li>
+                <li><span class="explanation-highlight">Mean Expenditure</span> — average household spending patterns.</li>
+                <li><span class="explanation-highlight">Poverty Rate</span> — proportion of families living below the national poverty line.</li>
+            </ul>
+            </p>
+            <p>
+            Use the dropdown to explore differences across states.
+            </p>
+        </div>
+        <div id="map-container">
+            <h3 class="map-title">Malaysia Socioeconomic Indicator by State</h3>
+            <div id="chloropleth_map"></div>
+        </div>
     </div>
-    <div id="map-container">
-        <h3 class="map-title">Malaysia Socioeconomic Indicator by State</h3>
-        <div id="chloropleth_map"></div>
-    </div>
+    <div class = "map-output">
+        <p>Wealthier states like <em>Selangor</em>, <em>Kuala Lumpur</em>, <em>Johor</em> and <em>Pulau Pinang</em> exhibit higher mean income and lower poverty rates, while rural and East Malaysian states lag behind, showing persistent disparities.</p>
     </div>
 
-    <div id="line-plot-container">
-        <h3 class="plot-title">Malaysia Mean Income and Poverty Rate by State</h3>
-        <div id="lineplot"></div>
+    <!-- Section Divider -->
+    <div class="section-divider-text">
+            <span>Exploring Malaysia’s Income Landscape</span>
     </div>
+
+    <!-- Income Section -->
+    <h3 class = "income-header">Income Growth and Distribution</h3>
+    <div class = "income-container">
+        <div class="income-explainer">
+            <h4>Understanding the Income Trends</h4>
+            <ul class="indicator-list">
+                <li><span class="explanation-highlight">2002–2014:</span> Steady <strong>income growth</strong> and declining <strong>poverty rates</strong>.</li>
+                <li><span class="explanation-highlight">2016:</span> <strong>Poverty rate increased</strong> due to introduction of <strong>GST and inflation pressures</strong>.</li>
+                <li><span class="explanation-highlight">2020–2022:</span> <strong>COVID-19</strong> led to <strong>income decrease</strong> and renewed <strong>poverty rise</strong>.</li>
+            </ul>
+        </div>
+        <div id="line-plot-container">
+            <h3 class="plot-title">Malaysia Mean Income and Poverty Rate by State</h3>
+            <div id="lineplot"></div>
+        </div>
     </div>
 </body>
 

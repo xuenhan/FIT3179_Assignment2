@@ -1,6 +1,6 @@
 {
     "$schema" : "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 900,
+    "width": 760,
     "height": 400,
     "params": [
         {
@@ -22,12 +22,32 @@
                 "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Homework10/main/hh_income_state_normalized.csv"
             },
             "transform": [
-                {"filter": "datum.state == selected_state"}
+                {"filter": "datum.state == selected_state"},
+                {"calculate": "'Mean Income'", "as": "Category"}
             ],
             "mark": {"type": "line", "color": "steelblue"},
             "encoding": {
                 "x": {"field": "year", "type": "ordinal", "title": "Year"},
-                "y": {"field": "income_mean", "type": "quantitative"}
+                "y": {"field": "income_mean", "type": "quantitative"},
+                "color": {
+                    "field": "Category",
+                    "type": "nominal",
+                    "scale": {
+                    "domain": ["Mean Income", "Poverty Rate"],
+                    "range": ["steelblue", "#8753d1"]
+                    },
+                    "legend": {
+                    "title": "Indicator",
+                    "orient": "right",
+                    "direction": "vertical",
+                    "titleFont": "Bree Serif",
+                    "titleFontSize": 14,
+                    "labelFont": "Sora",
+                    "labelFontSize": 13,
+                    "symbolSize": 200,
+                    "symbolStrokeWidth": 2
+                    }
+                }
             }
         },
         {
@@ -35,9 +55,10 @@
                 "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Homework10/main/hh_poverty_state_normalized.csv"
             },
             "transform": [
-                {"filter": "datum.state == selected_state"}
+                {"filter": "datum.state == selected_state"},
+                {"calculate": "'Poverty Rate'", "as": "Category"}
             ],
-            "mark": {"type": "line", "color": "#537D5D"},
+            "mark": {"type": "line", "color": "#8753d1"},
             "encoding": {
                 "x": {"field": "year", "type": "ordinal"},
                 "y": {"field": "poverty_absolute", "type": "quantitative","title": "Scaled Income and Poverty Rate"}
@@ -82,6 +103,30 @@
         "mark": {"type": "rule", "color": "gray", "strokeDash": [4, 4]},
         "encoding" : {
             "x": {"datum": "2020"}
+            }
+        },
+        {
+        "data" : {"values": [{"year": "2016"}]},
+        "mark": {"type": "rule", "color": "gray", "strokeDash": [4, 4]},
+        "encoding" : {
+            "x": {"datum": "2016"}
+            }
+        },
+        {
+            "data" : {"values": [{"year": "2016", "y": 0.95}]},
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": 5,
+                "dy": 0,
+                "font": "Arial",
+                "fontSize": 12,
+                "color": "gray"
+            },
+            "encoding" : {
+                "x": {"datum": "2016"},
+                "y": {"datum": 0.95},
+                "text": {"value": "Post GST Inflation"}
             }
         },
         {
