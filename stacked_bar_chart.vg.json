@@ -1,0 +1,73 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+  "height": 400,
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/mean_household_expenditure.csv"
+      },
+      "transform": [
+        {"filter": "datum.state != 'Malaysia'"},
+        {
+            "calculate": "datum.state == 'Perlis' || datum.state == 'Kedah' || datum.state == 'Pulau Pinang' || datum.state == 'Perak' ? 'Northern' : datum.state == 'Selangor' || datum.state == 'W.P. Kuala Lumpur' || datum.state == 'W.P. Putrajaya' || datum.state == 'Negeri Sembilan' ? 'Central' : datum.state == 'Melaka' || datum.state == 'Johor' ? 'Southern' : datum.state == 'Kelantan' || datum.state == 'Terengganu' || datum.state == 'Pahang' ? 'East Coast' : datum.state == 'Sabah' || datum.state == 'Sarawak' || datum.state == 'W.P. Labuan' ? 'East Malaysia' : 'Other'",
+            "as": "region"
+        }
+      ],
+      "mark": {
+        "type": "bar",
+        "stroke": "#dadada",       
+        "strokeWidth": 0.5,           
+        "cornerRadiusTopLeft": 2,     
+        "cornerRadiusTopRight": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "axis": {"title": "Year"}
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "expenditure_mean",
+          "type": "quantitative",
+          "axis": {"title": "Total Mean Household Expenditure (RM)"}
+        },
+        "color": {
+            "field": "region",
+            "type": "nominal",
+            "legend": {"title": "Region"},
+            "scale": {
+                "domain": ["Northern", "Central", "Southern", "East Coast", "East Malaysia"],
+                "range": ["#8F89C9", "#E3E0F5", "#6C67A3", "#CCC6EB", "#B0A6DF"]
+            }
+        },
+        "tooltip": [
+          {"field": "year", "title": "Year"},
+          {"field": "state", "title": "State"},
+          {"field": "region", "title": "Region"},
+          {"field": "expenditure_mean", "title": "Total Expenditure (RM)", "format": ",.2f"}
+        ]
+      }
+    }
+  ],
+  "resolve": {"scale": {"y": "independent"}},
+  "config": {
+    "view": {"stroke": "transparent"},
+    "title": {
+      "font": "Bree Serif",
+      "fontSize": 18,
+      "anchor": "start",
+      "color": "#333"
+    },
+    "axis": {
+      "labelFont": "Sora",
+      "titleFont": "Bree Serif"
+    },
+    "legend": {
+      "titleFont": "Bree Serif",
+      "labelFont": "Sora",
+      "symbolSize": 150
+    }
+  }
+}
