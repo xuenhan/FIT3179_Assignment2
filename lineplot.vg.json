@@ -19,7 +19,7 @@
     "layer": [
         {
             "data": {
-                "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/hh_income_state_normalized.csv"
+                "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/hh_income_state_normalized_2007.csv"
             },
             "transform": [
                 {"filter": "datum.state == selected_state"},
@@ -53,7 +53,7 @@
         },
         {
             "data": {
-                "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/hh_poverty_state_normalized.csv"
+                "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/hh_poverty_state_normalized_2007.csv"
             },
             "transform": [
                 {"filter": "datum.state == selected_state"},
@@ -68,7 +68,7 @@
         },
         {
             "data": {
-                "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/hh_income_state_normalized.csv"
+                "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/hh_income_state_normalized_2007.csv"
             },
             "transform": [
                 {"filter": "datum.state == selected_state"}
@@ -85,7 +85,7 @@
         },
         {
             "data": {
-                "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/hh_poverty_state_normalized.csv"
+                "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/hh_poverty_state_normalized_2007.csv"
             },
             "transform": [
                 {"filter": "datum.state == selected_state"}
