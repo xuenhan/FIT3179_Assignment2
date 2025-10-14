@@ -1,7 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 400,
+  "width": 300,
   "height": 400,
+  "title": {
+    "text": "Malaysia Mean Household Expenditure by Region (2016–2022)",
+    "font": "Bree Serif",
+    "fontSize": 18,
+    "anchor": "middle",
+    "dy": -10
+  },
   "layer": [
     {
       "data": {
@@ -38,8 +45,8 @@
             "type": "nominal",
             "legend": {"title": "Region"},
             "scale": {
-                "domain": ["Northern", "Central", "Southern", "East Coast", "East Malaysia"],
-                "range": ["#8F89C9", "#E3E0F5", "#6C67A3", "#CCC6EB", "#B0A6DF"]
+                "domain": ["Southern", "Northern", "East Malaysia", "East Coast", "Central"],
+                "range": ["#5E57A3", "#7B72C1", "#A394E1", "#C0B4EF", "#E0DBF9"]
             }
         },
         "tooltip": [

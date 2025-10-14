@@ -1,7 +1,35 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 760,
+  "title": {
+    "text": "Malaysia Household Income Ranking by State (2007–2022)",
+    "font": "Bree Serif",
+    "fontSize": 22,
+    "anchor": "middle",
+    "dy": -10
+  },
+  "width": 600,
   "height": 400,
+  "config": {
+    "title": {
+      "font": "Bree Serif",
+      "fontSize": 20,
+      "color": "#333"
+    },
+    "axis": {
+      "titleFont": "Bree Serif",
+      "titleFontSize": 13,
+      "labelFont": "Sora",
+      "labelFontSize": 12,
+      "labelColor": "#333"
+    },
+    "legend": {
+      "titleFont": "Bree Serif",
+      "titleFontSize": 13,
+      "labelFont": "Sora",
+      "labelFontSize": 12,
+      "labelColor": "#333"
+    }
+  },
   "data": {
     "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/hh_income_state_cleaned.csv",
     "format": {"type": "csv", "parse": {"year": "number", "income_mean": "number"}}
@@ -27,7 +55,8 @@
       "field": "rank",
       "type": "quantitative",
       "sort": "ascending",
-      "axis": {"title": "Rank (1 = Highest Income)"}
+      "axis": {"title": "Rank (1 = Highest Income)"},
+      "scale": {"reverse": true}
     },
     "color": {
       "field": "state",

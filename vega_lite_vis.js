@@ -9,3 +9,11 @@ vegaEmbed("#lineplot", vg_2).then(function(result) {
 var vg_3 = "bump_chart.vg.json";
 vegaEmbed("#bumpchart", vg_3).then(function(result) {
 }).catch(console.error)
+
+var vg_4 = "stacked_bar_chart.vg.json";
+vegaEmbed("#stacked_bar_chart", vg_4).then(function(result) {
+}).catch(console.error)
+
+var vg_5 = "radial_chart.vg.json";
+vegaEmbed("#radial_chart", vg_5).then(function(result) {
+}).catch(console.error)

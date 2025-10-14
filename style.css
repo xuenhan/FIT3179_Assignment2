@@ -1,11 +1,121 @@
 h2 {
   text-align: center;
   font-family: 'Bree Serif', serif;
-  font-size: 2.8em;
+  font-size: 3.5em;
   font-weight: bold;
   color: #6C67A3;
   margin-bottom: 10px;
 }
+
+/* --- HERO HEADER --- */
+.hero-section {
+  position: relative;
+  text-align: center;
+  color: #333;
+  background-image:
+    url('income.jpg'),
+    linear-gradient(to bottom, rgba(220, 215, 251, 0.85) 0%, rgba(255, 255, 255, 1) 100%);
+  background-size: cover; /* fills the section fully */
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-blend-mode: overlay; /* subtle blend instead of lighten */
+  padding: 20px 20px; /* give some breathing space */
+}
+
+.hero-section h1 {
+  font-family: 'Bree Serif', serif;
+  font-size: 3.8em;
+  font-weight: 700;
+  color: #5a52a3;
+  margin-bottom: 25px;
+  text-shadow: 0 2px 6px rgba(90, 82, 163, 0.1);
+}
+
+.hero-subtext {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Sora', sans-serif;
+  font-size: 1.15em;
+  line-height: 1.7;
+  color: #333;
+}
+
+.hero-subtext .highlight {
+  color: #6C67A3;
+  font-weight: 600;
+}
+
+.hero-quote {
+  margin: 40px auto 0;
+  max-width: 600px;
+  background: #f7f6f8;
+  border-left: 5px solid #6C67A3;
+  border-radius: 12px;
+  font-family: 'Sora', sans-serif;
+  font-style: italic;
+  color: #4e4689;
+  padding: 18px 28px;
+  box-shadow: 0 3px 12px rgba(108,103,163,0.08);
+}
+
+.section-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow:
+    0 4px 10px rgba(108, 103, 163, 0.15),   /* soft inner base */
+    0 8px 20px rgba(108, 103, 163, 0.18),   /* wider purple haze */
+    0 12px 40px rgba(108, 103, 163, 0.08);  /* faint far glow */
+  margin: 70px auto;
+  max-width: 1100px;
+  border: 1px solid rgba(108, 103, 163, 0.08);
+  transition: all 0.3s ease;
+  overflow: visible;
+  height: auto;
+  min-height: fit-content;
+}
+
+.section-label {
+  position: absolute;
+  top: -30px;             /* slightly above border line */
+  left: 450px;             /* align nicely with card left edge */
+  background: transparent;
+  color: #5E57A3;
+  font-family: 'Bree Serif', serif;
+  font-weight: 600;
+  font-size: 2.2em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 5px 14px;
+  border-radius: 6px 6px 0 0;  /* make top corners rounded only */
+}
+
+.section-card:hover {
+  box-shadow: 0 8px 20px rgba(108, 103, 163, 0.18);
+  transform: translateY(-3px);
+}
+
+.section-card h2 {
+  font-family: 'Bree Serif', serif;
+  font-size: 2.2em;
+  color: #5E57A3;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.section-intro {
+  font-family: 'Sora', sans-serif;
+  color: #444;
+  font-size: 1.05em;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-card {
+  padding-top: 50px; /* or more, depending on how much space you want */
+}
+
 
 .header-section {
   background: linear-gradient(to bottom, #ded9fc 0%, #ffffff 100%);
@@ -28,20 +138,33 @@ h2 {
 body {
   margin: 0;
   padding: 0;
-  background-color: #ffffff; /* or your preferred background color */
+  background: linear-gradient(
+    to bottom,
+    #ffffff 100%,     /* top – nearly white to match hero fade */
+    #eeeafc 100%,    /* light lavender middle */
+    #dcd7fb 100%,    /* richer lavender tone */
+    #c7c2f3 100%    /* deeper, elegant base */
+  );
+  background-attachment: fixed; /* keeps gradient steady when scrolling */
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Map Layout */
 .map-section {
   display: flex;
   align-items: flex-start;
-  justify-content: center; 
-  gap: 5px;               
+  justify-content: center;
+  gap: 20px;                     /* tighter gap */
   width: 100%;
-  max-width: 1400px;
-  margin: 0 auto 70px auto; 
-  padding: 0 40px;         
+  max-width: 950px;              /* smaller map region */
+  margin: 0 auto 10px auto;      /* tighter outer spacing */
+  padding: 0;               /* less padding */
   box-sizing: border-box;
+}
+
+.map-section {
+  transform: translateX(-30px); /* ⬅️ move whole block left */
 }
 
 .map-explainer {
@@ -49,19 +172,20 @@ body {
   background-color: #faf9ff;
   border-left: 3px solid #6C67A3;
   border-radius: 10px;
-  padding: 10px 14px;
+  padding: 0px 12px 5px 10px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
   font-family: 'Sora', sans-serif;
   color: #444;
   line-height: 1.4;
   font-size: 0.82em;
-  margin-top: 60px;
+  margin-top: 50px;
 }
 
 .map-explainer h4 {
   color: #5E57A3;
   font-weight: 600;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
+  margin-top: 15px;
   font-size: 1.3em;         
   font-family: 'Bree Serif', serif;
 }
@@ -71,6 +195,7 @@ body {
   font-weight: 300;
   letter-spacing: 0.05px;
   font-size: 1em;
+  margin-bottom: 10px;
 }
 
 #map-container {
@@ -80,7 +205,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   position: relative;
-  max-width: 850px;
+  max-width: 650px;
   margin: 0 auto;          
   text-align: center;
   margin-left: 5px;
@@ -99,21 +224,6 @@ body {
   margin: 0 auto !important;  
   padding: 0 !important;     
   display: block !important;
-}
-
-.map-title {
-  text-align: center;
-  width: 100%;
-  left: 20px;
-  max-width: 850px;            
-  margin: 0 auto 12px auto;    
-  font-family: 'Bree Serif', serif;
-  font-size: 1.5em;
-  font-weight: 600;
-  color: #333;
-  letter-spacing: 0.2px;
-  margin-bottom: 5px; 
-  margin-top: 10px;
 }
 
 #line-plot-container {
@@ -140,21 +250,47 @@ body {
   transition: all 0.3s ease;
 }
 
-.map-output {
+.map-context {
+  max-width: 900px;
+  margin: 20px auto 60px auto;
+  border-radius: 10px;
   font-family: 'Sora', sans-serif;
-  text-align: center;
-  font-weight: 300;
-  font-size: 1.05em;
-  color: #444;
-  letter-spacing: 0.2px;
-  margin: 25px auto 40px auto;
-  max-width: 850px;
+  color: #333;
+  line-height: 1.5;
+  font-size: 0.9em;
+  padding: 25px 30px;
+  column-count: 2;          /* ✅ splits into two columns */
+  column-gap: 50px;         /* spacing between columns */
+  column-fill: balance;     /* evenly fills both columns */
+  text-align: justify;
+  text-align-last: left;
 }
 
-.map-output em {
+.map-context .context-header {
+  font-family: 'Bree Serif', serif;
   color: #5E57A3;
-  font-style: normal;
-  font-weight: 400;
+  font-size: 1.3em;
+  margin-bottom: 15px;
+  text-transform: none;
+  text-align: left;
+  column-span: all;         /* ✅ ensures header spans both columns */
+  break-after: avoid-column;
+  align-items: flex-start;
+  padding-top: 0px;
+}
+
+.map-context p {
+  margin-top: 0em;
+  margin-bottom: 15px;
+  text-align: justify; 
+}
+
+.map-context::before,
+.map-context::after {
+  content: "";
+  display: block;
+  height: 0;
+  break-after: column;
 }
 
 .highlight {
@@ -209,9 +345,9 @@ body {
   width: 100%;                 /* ✅ ensures full container width */
   max-width: 1200px;            /* ✅ matches map title width */
   margin: 40px auto;           /* ✅ keeps spacing clean */
-  font-family: 'Sora', sans-serif;
-  font-size: 0.95em;
-  font-weight: 400;
+  font-family: 'Bree Serif', serif;
+  font-size: 2.5em;
+  font-weight: 600;
   color: #6C67A3;
   letter-spacing: 0.4px;
   text-align: center;
@@ -257,7 +393,7 @@ body {
   font-weight: 600;
   color: #333;
   margin-bottom: 5px;
-  margin-top: 20px;   /* pull it closer to the map if needed */
+  margin-top: 80px; 
   letter-spacing: 0.2px;
 }
 
@@ -315,7 +451,7 @@ body {
   text-align: center;
   width: 100%;
   left: 0px;
-  max-width: 760px;            
+  max-width: 600px;            
   margin: 0 auto 12px auto;    
   font-family: 'Bree Serif', serif;
   font-size: 1.5em;
@@ -323,7 +459,6 @@ body {
   color: #333;
   letter-spacing: 0.2px;
   margin-bottom: 5px; 
-  margin-top: 10px;
   margin-left: 45px;
 }
 
@@ -353,7 +488,7 @@ body {
   color: #444;
   line-height: 1.4;
   font-size: 0.82em;
-  margin: 50px auto 0px auto;
+  margin: 40px auto 0px auto;
   max-width: 1400px;
 }
 
@@ -424,6 +559,76 @@ body {
   max-width: 650px;
 }
 
+/* Expenditure Section */
+.expenditure-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap; /* ✅ Force side-by-side */
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0px auto;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
 
+.chart-box {
+  flex: 1 1 50%;
+  min-width: 400px;
+  max-width: 520px;
+  height: auto;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+/* ✅ Make Vega charts resize nicely inside flex */
+.chart-box > div {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.expenditure-explainer {
+  max-width: 900px;
+  margin: -10px auto 60px auto;
+  border-radius: 10px;
+  font-family: 'Sora', sans-serif;
+  color: #333;
+  line-height: 1.5;
+  font-size: 0.9em;
+  padding: 25px 30px;
+  column-count: 2;          /* ✅ splits into two columns */
+  column-gap: 50px;         /* spacing between columns */
+  column-fill: balance;     /* evenly fills both columns */
+  text-align: justify;
+  text-align-last: left;
+}
+
+.expenditure-explainer .context-header {
+  font-family: 'Bree Serif', serif;
+  color: #5E57A3;
+  font-size: 1.3em;
+  margin-bottom: 15px;
+  text-transform: none;
+  text-align: left;
+  column-span: all;         /* ✅ ensures header spans both columns */
+  break-after: avoid-column;
+  align-items: flex-start;
+  padding-top: 0px;
+}
+
+.expenditure-explainer  p {
+  margin-top: 0em;
+  margin-bottom: 15px;
+  text-align: justify; 
+}
+
+.expenditure-explainer::before,
+.expenditure-explainer::after {
+  content: "";
+  display: block;
+  height: 0;
+  break-after: column;
+}
 

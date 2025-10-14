@@ -1,0 +1,72 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 300,
+    "height": 400,
+    "title": {
+        "text": "Expenditure Breakdown by Category (2022)",
+        "font": "Bree Serif",
+        "fontSize": 18,
+        "anchor": "middle",
+        "dy": -10
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/expenditure_category.csv"
+    },
+    "transform": [
+        {"filter": "datum.Year == 2022"}
+    ],
+    "config": {
+        "view": {"stroke": null},
+        "legend": {
+        "titleFont": "Bree Serif",
+        "titleFontSize": 12,
+        "labelFont": "Sora",
+        "labelFontSize": 10,
+        "labelColor": "#333"
+        },
+        "title": {
+        "font": "Bree Serif",
+        "color": "#333"
+        },
+        "axis": {
+        "labelFont": "Sora",
+        "titleFont": "Bree Serif"
+        }
+    },
+    "layer": [
+        {   
+            "params": [
+                {
+                    "name": "highlight",
+                    "select": {"type": "point", "fields": ["Expenditure_Group"]},
+                    "bind": "legend"
+                }
+            ],
+            "mark": {"type": "arc", "innerRadius": 60, "outerRadius": 130, "stroke": "#ffffff", "strokeWidth": 1},
+            "encoding": {
+                "theta": {
+                    "field": "Value",
+                    "type": "quantitative",
+                    "stack": true,
+                    "title": "Expenditure Share (%)"
+                },
+                "color": {
+                    "field": "Expenditure_Group",
+                    "type": "nominal",
+                    "legend": {"title": "Expenditure Category"},
+                    "scale": {
+                        "scheme": "purpleblue"
+                    }
+                },
+                "opacity": {
+                    "condition": {"param": "highlight", "value": 1},
+                    "value": 0.3
+                },
+                "tooltip": [
+                    { "field": "Expenditure_Group", "title": "Category" },
+                    { "field": "Value", "title": "Share (%)", "format": ".1f" }
+                ]
+            }
+        }
+    ]
+}
