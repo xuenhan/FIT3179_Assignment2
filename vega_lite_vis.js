@@ -17,3 +17,11 @@ vegaEmbed("#stacked_bar_chart", vg_4).then(function(result) {
 var vg_5 = "radial_chart.vg.json";
 vegaEmbed("#radial_chart", vg_5).then(function(result) {
 }).catch(console.error)
+
+var vg_6 = "scatterplot.vg.json";
+vegaEmbed("#scatterplot", vg_6).then(function(result) {
+}).catch(console.error)
+
+var vg_7 = "heatmap.vg.json";
+vegaEmbed("#heatmap", vg_7).then(function(result) {
+}).catch(console.error)

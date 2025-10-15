@@ -1,0 +1,61 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 250,
+    "height": 400,
+    "data": {
+        "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/hh_lq_state_normalized.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "stroke": "white",
+        "strokeWidth": 0.5
+    },
+    "encoding": {
+        "x": {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year",
+            "axis": { "labelFont": "Sora", "titleFont": "Sora" }
+        },
+        "y": {
+            "field": "state",
+            "type": "nominal",
+            "sort": "-x",
+            "title": "State",
+            "axis": { "labelFont": "Sora", "titleFont": "Sora" }
+        },
+        "color": {
+            "field": "households_norm",
+            "type": "quantitative",
+            "title": "No. of Households",
+            "scale": {"scheme": "purples"}
+        },
+        "tooltip": [
+            {"field": "state", "title": "State"},
+            {"field": "year", "title": "Year"},
+            {"field": "households_norm", "title": "No. of Households"}
+        ]
+    },
+    "config": {
+        "view": { "stroke": "transparent" },
+        "axis": {
+            "labelFont": "Sora",
+            "titleFont": "Bree Serif",
+            "labelFontSize": 12,
+            "titleFontSize": 13
+        },
+        "legend": {
+            "titleFont": "Bree Serif",
+            "labelFont": "Sora",
+            "titleFontSize": 13,
+            "labelFontSize": 11,
+            "symbolSize": 150
+        }
+    },
+    "title": {
+        "text": "Number of Households by State and Year",
+        "font": "Bree Serif",
+        "fontSize": 18,
+        "anchor": "middle"
+    }
+}

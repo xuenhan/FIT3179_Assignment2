@@ -146,6 +146,15 @@
         }    
     ],
     "config": {
+        "axis": {
+            "titleFont": "Bree Serif",
+            "titleFontSize": 13,
+            "titleFontWeight": "bold",
+            "labelFont": "Sora",
+            "labelFontSize": 11,
+            "gridColor": "#e0e0e0",
+            "tickColor": "#888"
+        },
         "legend": {
             "titleFont": "Bree Serif",
             "titleFontSize": 12,

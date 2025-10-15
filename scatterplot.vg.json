@@ -1,0 +1,71 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 300,
+    "height": 400,
+    "data": {
+        "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/income_gini_state_year.csv"
+    },
+    "params": [
+        {
+            "name": "selected_year",
+            "value": 2007,
+            "bind": {
+            "input": "select",
+            "options": [2007, 2009, 2012, 2014, 2016, 2019, 2022],
+            "name": "Year: "
+            }
+        }
+    ],
+    "transform": [
+        {
+            "calculate": "datum.gini",
+            "as": "Gini"
+        },
+        {
+            "filter": "datum.year == selected_year"
+        }
+    ],
+    "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 80,
+        "opacity": 0.8
+    },
+    "encoding": {
+        "x": {
+            "field": "income_mean",
+            "type": "quantitative",
+            "title": "Mean Household Income (RM)"
+        },
+        "y": {
+            "field": "Gini",
+            "type": "quantitative",
+            "title": "Gini Coefficient"
+        },
+        "color": {
+            "field": "state",
+            "type": "nominal",
+            "title": "State",
+            "legend": {"orient": "right"},
+            "scale": {"scheme": "purples"}
+        },
+        "tooltip": [
+            {"field": "state", "type": "nominal", "title": "State"},
+            {"field": "year", "type": "ordinal"},
+            {"field": "income_mean", "type": "quantitative", "title": "Mean Income (RM)"},
+            {"field": "Gini", "type": "quantitative", "title": "Gini Coefficient"}
+        ]
+    },
+    "config": {
+        "view": { "stroke": "transparent" },
+        "axis": {
+            "labelFont": "Sora",
+            "titleFont": "Bree Serif"
+        },
+        "legend": {
+            "titleFont": "Bree Serif",
+            "labelFont": "Sora",
+            "symbolSize": 150
+        }
+    }
+}
