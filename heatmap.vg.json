@@ -33,7 +33,7 @@
         "tooltip": [
             {"field": "state", "title": "State"},
             {"field": "year", "title": "Year"},
-            {"field": "households_norm", "title": "No. of Households"}
+            {"field": "households_norm", "title": "No. of Households", "format": ".2f"}
         ]
     },
     "config": {
