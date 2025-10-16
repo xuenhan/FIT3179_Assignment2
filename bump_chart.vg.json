@@ -7,7 +7,7 @@
     "anchor": "middle",
     "dy": -10
   },
-  "width": 600,
+  "width": 530,
   "height": 400,
   "config": {
     "title": {
@@ -24,7 +24,7 @@
     },
     "legend": {
       "titleFont": "Bree Serif",
-      "titleFontSize": 13,
+      "titleFontSize": 14,
       "labelFont": "Sora",
       "labelFontSize": 12,
       "labelColor": "#333"
@@ -87,7 +87,7 @@
           "#6A0DAD",
           "#7B68EE",
           "#4169E1",
-          "#0d5db8",
+          "#5E77B8",
           "#1E90FF",
           "#CCCCCC",
           "#CCCCCC",

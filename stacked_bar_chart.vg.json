@@ -9,55 +9,53 @@
     "anchor": "middle",
     "dy": -10
   },
-  "layer": [
-    {
-      "data": {
+  "data": {
         "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/mean_household_expenditure.csv"
-      },
-      "transform": [
-        {"filter": "datum.state != 'Malaysia'"},
-        {
-            "calculate": "datum.state == 'Perlis' || datum.state == 'Kedah' || datum.state == 'Pulau Pinang' || datum.state == 'Perak' ? 'Northern' : datum.state == 'Selangor' || datum.state == 'W.P. Kuala Lumpur' || datum.state == 'W.P. Putrajaya' || datum.state == 'Negeri Sembilan' ? 'Central' : datum.state == 'Melaka' || datum.state == 'Johor' ? 'Southern' : datum.state == 'Kelantan' || datum.state == 'Terengganu' || datum.state == 'Pahang' ? 'East Coast' : datum.state == 'Sabah' || datum.state == 'Sarawak' || datum.state == 'W.P. Labuan' ? 'East Malaysia' : 'Other'",
-            "as": "region"
-        }
+  },
+  "transform": [
+    {"filter": "datum.state != 'Malaysia'"},
+    {
+        "calculate": "datum.state == 'Perlis' || datum.state == 'Kedah' || datum.state == 'Pulau Pinang' || datum.state == 'Perak' ? 'Northern' : datum.state == 'Selangor' || datum.state == 'W.P. Kuala Lumpur' || datum.state == 'W.P. Putrajaya' || datum.state == 'Negeri Sembilan' ? 'Central' : datum.state == 'Melaka' || datum.state == 'Johor' ? 'Southern' : datum.state == 'Kelantan' || datum.state == 'Terengganu' || datum.state == 'Pahang' ? 'East Coast' : datum.state == 'Sabah' || datum.state == 'Sarawak' || datum.state == 'W.P. Labuan' ? 'East Malaysia' : 'Other'",
+        "as": "region"
+    },
+    {
+      "aggregate": [
+        {"op": "mean", "field": "expenditure_mean", "as": "mean_expenditure"}
       ],
-      "mark": {
-        "type": "bar",
-        "stroke": "#dadada",       
-        "strokeWidth": 0.5,           
-        "cornerRadiusTopLeft": 2,     
-        "cornerRadiusTopRight": 2
-      },
-      "encoding": {
-        "x": {
-          "field": "year",
-          "type": "ordinal",
-          "axis": {"title": "Year"}
-        },
-        "y": {
-          "aggregate": "sum",
-          "field": "expenditure_mean",
-          "type": "quantitative",
-          "axis": {"title": "Total Mean Household Expenditure (RM)"}
-        },
-        "color": {
-            "field": "region",
-            "type": "nominal",
-            "legend": {"title": "Region"},
-            "scale": {
-                "domain": ["Southern", "Northern", "East Malaysia", "East Coast", "Central"],
-                "range": ["#5E57A3", "#7B72C1", "#A394E1", "#C0B4EF", "#E0DBF9"]
-            }
-        },
-        "tooltip": [
-          {"field": "year", "title": "Year"},
-          {"field": "state", "title": "State"},
-          {"field": "region", "title": "Region"},
-          {"field": "expenditure_mean", "title": "Total Expenditure (RM)", "format": ",.2f"}
-        ]
-      }
+      "groupby": ["region", "year"]
     }
   ],
+  "mark": {
+    "type": "bar",
+    "cornerRadiusTopLeft": 2,
+    "cornerRadiusTopRight": 2
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "axis": {"title": "Year"}
+    },
+    "y": {
+      "field": "mean_expenditure",
+      "type": "quantitative",
+      "axis": {"title": "Mean Household Expenditure (RM)"}
+    },
+    "color": {
+        "field": "region",
+        "type": "nominal",
+        "legend": {"title": "Region"},
+        "scale": {
+            "domain": ["Southern", "Northern", "East Malaysia", "East Coast", "Central"],
+            "range": ["#6C63A6", "#5E77B8", "#4F8CC9", "#4A9ED1", "#4590B0"]
+        }
+    },
+    "tooltip": [
+      {"field": "year", "title": "Year"},
+      {"field": "region", "title": "Region"},
+      {"field": "mean_expenditure", "title": "Total Expenditure (RM)", "format": ",.2f"}
+    ]
+  },
   "resolve": {"scale": {"y": "independent"}},
   "config": {
     "view": {"stroke": "transparent"},
@@ -73,6 +71,8 @@
     },
     "legend": {
       "titleFont": "Bree Serif",
+      "titleFontSize": 14,
+      "labelFontSize": 12,
       "labelFont": "Sora",
       "symbolSize": 150
     }

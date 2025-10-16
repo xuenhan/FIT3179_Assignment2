@@ -1,6 +1,6 @@
 {
     "$schema" : "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 600,
+    "width": 550,
     "height": 400,
     "title": {
         "text": "Malaysia Mean Income and Poverty Rate by State (2007 - 2022)",
@@ -117,14 +117,14 @@
                 "align": "left",
                 "dx": 5,
                 "dy": 0,
-                "font": "Arial",
-                "fontSize": 10,
+                "font": "Sora",
+                "fontSize": 11,
                 "color": "gray"
             },
             "encoding" : {
                 "x": {"datum": "2016"},
                 "y": {"datum": 0.95},
-                "text": {"value": "GST Implementation & Inflation"}
+                "text": {"value": "GST & Inflation"}
             }
         },
         {
@@ -134,8 +134,8 @@
                 "align": "left",
                 "dx": 5,
                 "dy": 0,
-                "font": "Arial",
-                "fontSize": 10,
+                "font": "Sora",
+                "fontSize": 11,
                 "color": "gray"
             },
             "encoding" : {
@@ -157,9 +157,9 @@
         },
         "legend": {
             "titleFont": "Bree Serif",
-            "titleFontSize": 12,
+            "titleFontSize": 14,
             "labelFont": "Sora",
-            "labelFontSize": 10,
+            "labelFontSize": 12,
             "symbolSize": 200,
             "symbolStrokeWidth": 2
         }
