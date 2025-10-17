@@ -63,7 +63,7 @@
                     "type": "nominal",
                     "legend": {"title": "Expenditure Category"},
                     "scale": {
-                       "range": ["#C4D9FF", "#B5A8D5", "#7A73D1", "#4D55CC", "#211C84"]
+                       "range": ["#C5BAFF", "#FED2E2", "#C4D9FF", "#A19AD3", "#80C4E9"]
 
                     }
                 },

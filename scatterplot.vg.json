@@ -47,7 +47,8 @@
         "y": {
             "field": "Gini",
             "type": "quantitative",
-            "title": "Gini Coefficient"
+            "title": "Gini Coefficient",
+            "scale": {"domain": [0.25, 0.5]}
         },
         "color": {
             "field": "state",
@@ -67,11 +68,15 @@
         "view": { "stroke": "transparent" },
         "axis": {
             "labelFont": "Sora",
-            "titleFont": "Bree Serif"
+            "titleFont": "Bree Serif",
+            "labelFontSize": 12,
+            "titleFontSize": 13
         },
         "legend": {
             "titleFont": "Bree Serif",
+            "titleFontSize": 13,
             "labelFont": "Sora",
+            "labelFontSize": 11,
             "symbolSize": 150
         }
     }

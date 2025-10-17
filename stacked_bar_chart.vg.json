@@ -67,7 +67,9 @@
     },
     "axis": {
       "labelFont": "Sora",
-      "titleFont": "Bree Serif"
+      "titleFont": "Bree Serif",
+      "labelFontSize": 12,
+      "titleFontSize": 13
     },
     "legend": {
       "titleFont": "Bree Serif",
