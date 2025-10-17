@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 300,
+    "width": 275,
     "height": 400,
     "title": {
         "text": "Expenditure Breakdown by Category (2022)",
@@ -13,7 +13,15 @@
         "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/expenditure_category.csv"
     },
     "transform": [
-        {"filter": "datum.Year == 2022"}
+        {"filter": "datum.Year == 2022"},
+        {
+            "calculate": "datum.Expenditure_Group == 'Food & Beverages' || datum.Expenditure_Group == 'Housing & Utilities' || datum.Expenditure_Group == 'Health' ? 'Basic Needs' : datum.Expenditure_Group == 'Recreation & Culture' || datum.Expenditure_Group == 'Restaurants & Accommodation' || datum.Expenditure_Group == 'Clothing & Footwear' ? 'Lifestyle' : datum.Expenditure_Group == 'Education' || datum.Expenditure_Group == 'Info & Communication' ? 'Education & Communication' : datum.Expenditure_Group == 'Insurance & Finance' || datum.Expenditure_Group == 'Personal Care & Others' ? 'Finance & Insurance' : 'Transport & Miscellaneous'",
+            "as": "Category_Group"
+        },
+        {
+            "aggregate": [{"op": "sum", "field": "Value", "as": "Total_Value"}],
+            "groupby": ["Category_Group"]
+        }
     ],
     "config": {
         "view": {"stroke": null},
@@ -45,17 +53,18 @@
             "mark": {"type": "arc", "innerRadius": 60, "outerRadius": 130, "stroke": "#ffffff", "strokeWidth": 1},
             "encoding": {
                 "theta": {
-                    "field": "Value",
+                    "field": "Total_Value",
                     "type": "quantitative",
                     "stack": true,
                     "title": "Expenditure Share (%)"
                 },
                 "color": {
-                    "field": "Expenditure_Group",
+                    "field": "Category_Group",
                     "type": "nominal",
                     "legend": {"title": "Expenditure Category"},
                     "scale": {
-                        "scheme": "purpleblue"
+                       "range": ["#C4D9FF", "#B5A8D5", "#7A73D1", "#4D55CC", "#211C84"]
+
                     }
                 },
                 "opacity": {
@@ -63,8 +72,8 @@
                     "value": 0.3
                 },
                 "tooltip": [
-                    { "field": "Expenditure_Group", "title": "Category" },
-                    { "field": "Value", "title": "Share (%)", "format": ".1f" }
+                    { "field": "Category_Group", "title": "Category" },
+                    { "field": "Total_Value", "title": "Share (%)", "format": ".1f" }
                 ]
             }
         }

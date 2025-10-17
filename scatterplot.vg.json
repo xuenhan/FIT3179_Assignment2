@@ -2,6 +2,13 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 300,
     "height": 400,
+    "title": {
+        "text": "Household Income vs Inequality by State",
+        "font": "Bree Serif",
+        "fontSize": 16,
+        "anchor": "middle",
+        "dy": -5
+    },
     "data": {
         "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/income_gini_state_year.csv"
     },

@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 300,
+  "width": 275,
   "height": 400,
   "title": {
     "text": "Malaysia Mean Household Expenditure by Region (2016–2022)",

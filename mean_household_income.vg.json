@@ -10,13 +10,18 @@
     "dy": 10
   },
   "padding": {"left": 0, "right": 0, "top": 0, "bottom": 20},
-  "projection": {"type": "mercator", "center": [110, 3], "scale": 1870, "translate": [345, 220]},
+  "projection": {
+    "type": "mercator",
+    "center": [110, 3],
+    "scale": 1870,
+    "translate": [345, 220]
+  },
   "params": [
     {
       "name": "indicator",
       "value": "income_mean",
       "bind": {
-        "input": "select", 
+        "input": "select",
         "options": ["income_mean", "expenditure_mean", "poverty"],
         "labels": ["Mean Income", "Mean Expenditure", "Poverty Rate"],
         "name": "Select Indicator: "
@@ -28,7 +33,6 @@
       "data": {"sphere": true},
       "mark": {"type": "geoshape", "fill": "#8ccaf4"}
     },
-
     {
       "data": {"graticule": {"step": [1, 1]}},
       "mark": {
@@ -58,10 +62,8 @@
           "fold": ["income_mean", "expenditure_mean", "poverty"],
           "as": ["indicator_field", "indicator_value"]
         },
+        {"filter": "datum.indicator_field == indicator"},
         {
-          "filter": "datum.indicator_field == indicator"
-        },
-         {
           "calculate": "indicator == 'income_mean' ? 'Mean Income (RM)' : indicator == 'expenditure_mean' ? 'Mean Expenditure (RM)' : 'Poverty Rate (%)'",
           "as": "tooltipLabel"
         },
@@ -80,36 +82,140 @@
             "type": "quantile",
             "range": ["#E3E0F5", "#CCC6EB", "#B0A6DF", "#8F89C9", "#6C67A3"]
           },
-        "legend": {
+          "legend": {
             "orient": "right",
             "offset": 10,
             "titleFontSize": 12,
             "labelFontSize": 10,
             "titleFontWeight": "bold",
-            "titleFont":"Bree Serif",
-            "labelFont":"Sora"
+            "titleFont": "Bree Serif",
+            "labelFont": "Sora"
           }
         },
         "tooltip": [
-          {"field": "properties.name", "type": "nominal", "title": "State"},
-          {"field": "tooltipLabel", "type": "nominal", "title": "Indicator"},
-          {"field": "tooltipValue", "type": "nominal", "title": "Value (Normalised)"}
+          {"field": "properties.name", "title": "State"},
+          {"field": "tooltipLabel", "title": "Indicator"},
+          {"field": "tooltipValue", "title": "Value (Normalised)"}
         ]
       }
     },
-     {
-      "data": {"values": [{}]},   
+    {
+      "data": {"values": [{}]},
       "transform": [
         {
           "calculate": "indicator == 'income_mean' ? 'Mean Income (RM)' : indicator == 'expenditure_mean' ? 'Mean Expenditure (RM)' : 'Poverty Rate (%)'",
           "as": "legendTitle"
         }
       ],
-      "mark": {"type": "text", "fontSize": 12, "font": "Sora", "fontWeight": "bold", "align": "left"},
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "font": "Sora",
+        "fontWeight": "bold",
+        "align": "left"
+      },
       "encoding": {
         "x": {"value": 660},
         "y": {"value": -10},
         "text": {"field": "legendTitle"}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 104.5,
+            "lat": 4.5,
+            "label": "Urban hub, highest income"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 5,
+        "dy": 0,
+        "font": "Sora",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "fill": "#454444"
+      },
+      "encoding": {
+        "longitude": {"field": "lon"},
+        "latitude": {"field": "lat"},
+        "text": {"field": "label"}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon1": 104.5,
+            "lat1": 4.5,
+            "lon2": 102.5,
+            "lat2": 3.9
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "color": "#454444",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "longitude": {"field": "lon1"},
+        "latitude": {"field": "lat1"},
+        "longitude2": {"field": "lon2"},
+        "latitude2": {"field": "lat2"}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 110.5,
+            "lat": 8,
+            "label": "Lower income,\nlimited infrastructure access"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 5,
+        "dy": 0,
+        "font": "Sora",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "fill": "#454444"
+      },
+      "encoding": {
+        "longitude": {"field": "lon"},
+        "latitude": {"field": "lat"},
+        "text": {"field": "label"}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon1": 116.2,
+            "lat1": 6.0,
+            "lon2": 115.3,
+            "lat2": 7.6
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "color": "#454444",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "longitude": {"field": "lon1"},
+        "latitude": {"field": "lat1"},
+        "longitude2": {"field": "lon2"},
+        "latitude2": {"field": "lat2"}
       }
     }
   ]
