@@ -10,7 +10,7 @@
     "dy": -10
   },
   "data": {
-        "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/mean_household_expenditure.csv"
+        "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/datasets/mean_household_expenditure.csv"
   },
   "transform": [
     {"filter": "datum.state != 'Malaysia'"},

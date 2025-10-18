@@ -10,7 +10,7 @@
         "dy": -5
     },
     "data": {
-        "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/income_gini_state_year.csv"
+        "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/datasets/income_gini_state_year.csv"
     },
     "params": [
         {

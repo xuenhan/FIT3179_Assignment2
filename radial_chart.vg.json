@@ -10,7 +10,7 @@
         "dy": -10
     },
     "data": {
-        "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/expenditure_category.csv"
+        "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/datasets/expenditure_category.csv"
     },
     "transform": [
         {"filter": "datum.Year == 2022"},

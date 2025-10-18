@@ -52,7 +52,7 @@
           "lookup": "properties.name",
           "from": {
             "data": {
-              "url": "https://xuenhan.github.io/FIT3179_Homework9/hies_state_normalized.csv"
+              "url": "https://xuenhan.github.io/FIT3179_Homework9/datasets/hies_state_normalized.csv"
             },
             "key": "state",
             "fields": ["income_mean", "expenditure_mean", "poverty"]

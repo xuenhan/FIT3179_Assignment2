@@ -31,7 +31,7 @@
     }
   },
   "data": {
-    "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/hh_income_state_cleaned.csv",
+    "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/datasets/hh_income_state_cleaned.csv",
     "format": {"type": "csv", "parse": {"year": "number", "income_mean": "number"}}
   },
   "transform": [

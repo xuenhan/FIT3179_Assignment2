@@ -3,7 +3,7 @@
     "width": 250,
     "height": 400,
     "data": {
-        "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/hh_lq_state_normalized.csv"
+        "url": "https://raw.githubusercontent.com/xuenhan/FIT3179_Assignment2/main/datasets/hh_lq_state_normalized.csv"
     },
     "mark": {
         "type": "rect",
