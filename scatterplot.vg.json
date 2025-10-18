@@ -48,7 +48,7 @@
             "field": "Gini",
             "type": "quantitative",
             "title": "Gini Coefficient",
-            "scale": {"domain": [0.30, 0.5]}
+            "scale": {"domain": [0, 0.5]}
         },
         "color": {
             "field": "state",

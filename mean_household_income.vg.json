@@ -103,7 +103,7 @@
       "data": {"values": [{}]},
       "transform": [
         {
-          "calculate": "indicator == 'income_mean' ? 'Mean Income (RM)' : indicator == 'expenditure_mean' ? 'Mean Expenditure (RM)' : 'Poverty Rate (%)'",
+          "calculate": "indicator == 'income_mean' ? 'Mean Income (RM)' : indicator == 'expenditure_mean' ? 'Mean Expenditure' : 'Poverty Rate (%)'",
           "as": "legendTitle"
         }
       ],

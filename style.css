@@ -624,7 +624,8 @@ body {
 .footer-container {
   max-width: 1200px;       
   margin: 0 auto;         
-  text-align: left;       
+  text-align: left;     
+  margin-left: 50px;  
 }
 
 .footer-heading {
