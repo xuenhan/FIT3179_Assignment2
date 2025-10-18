@@ -614,12 +614,11 @@ body {
 
 .author-metadata {
   text-align: center;
-  padding: 40px 20px 30px;
-  margin-top: 60px;
+  padding: 0px 20px 30px;
+  margin-top: 20px;
   background: linear-gradient(to top, #f9f8ff, #ffffff);
   font-family: 'Sora', sans-serif;
   color: #555;
-  border-top: 1px solid rgba(108, 103, 163, 0.15);
 }
 
 .footer-container {
