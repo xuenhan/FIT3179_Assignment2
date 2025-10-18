@@ -15,7 +15,7 @@
     "transform": [
         {"filter": "datum.Year == 2022"},
         {
-            "calculate": "datum.Expenditure_Group == 'Food & Beverages' || datum.Expenditure_Group == 'Housing & Utilities' || datum.Expenditure_Group == 'Health' ? 'Basic Needs' : datum.Expenditure_Group == 'Recreation & Culture' || datum.Expenditure_Group == 'Restaurants & Accommodation' || datum.Expenditure_Group == 'Clothing & Footwear' ? 'Lifestyle' : datum.Expenditure_Group == 'Education' || datum.Expenditure_Group == 'Info & Communication' ? 'Education & Communication' : datum.Expenditure_Group == 'Insurance & Finance' || datum.Expenditure_Group == 'Personal Care & Others' ? 'Finance & Insurance' : 'Transport & Miscellaneous'",
+            "calculate": "datum.Expenditure_Group == 'Food & Beverages' || datum.Expenditure_Group == 'Housing & Utilities' || datum.Expenditure_Group == 'Health' ? 'Basic Needs' : datum.Expenditure_Group == 'Recreation & Culture' || datum.Expenditure_Group == 'Restaurants & Accommodation' || datum.Expenditure_Group == 'Clothing & Footwear' ? 'Lifestyle' : datum.Expenditure_Group == 'Education' || datum.Expenditure_Group == 'Info & Communication' ? 'Education & Media' : datum.Expenditure_Group == 'Insurance & Finance' || datum.Expenditure_Group == 'Personal Care & Others' ? 'Finance & Insurance' : 'Transport & Miscellaneous'",
             "as": "Category_Group"
         },
         {
@@ -26,19 +26,19 @@
     "config": {
         "view": {"stroke": null},
         "legend": {
-        "titleFont": "Bree Serif",
-        "titleFontSize": 12,
-        "labelFont": "Sora",
-        "labelFontSize": 10,
-        "labelColor": "#333"
+            "titleFont": "Bree Serif",
+            "titleFontSize": 14,
+            "labelFont": "Sora",
+            "labelFontSize": 12,
+            "labelColor": "#333"
         },
         "title": {
-        "font": "Bree Serif",
-        "color": "#333"
+            "font": "Bree Serif",
+            "color": "#333"
         },
         "axis": {
-        "labelFont": "Sora",
-        "titleFont": "Bree Serif"
+            "labelFont": "Sora",
+            "titleFont": "Bree Serif"
         }
     },
     "layer": [
