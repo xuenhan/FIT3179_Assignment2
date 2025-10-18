@@ -44,7 +44,7 @@
     },
     {
       "data": {
-        "url": "https://xuenhan.github.io/FIT3179_Homework9/output.json",
+        "url": "https://xuenhan.github.io/FIT3179_Assignment2/output.json",
         "format": {"type": "topojson", "feature": "my (1)"}
       },
       "transform": [
@@ -52,7 +52,7 @@
           "lookup": "properties.name",
           "from": {
             "data": {
-              "url": "https://xuenhan.github.io/FIT3179_Homework9/datasets/hies_state_normalized.csv"
+              "url": "https://xuenhan.github.io/FIT3179_Assignment2/datasets/hies_state_normalized.csv"
             },
             "key": "state",
             "fields": ["income_mean", "expenditure_mean", "poverty"]
