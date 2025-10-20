@@ -223,6 +223,12 @@ body {
   margin-bottom: 100px; 
 }
 
+#line-plot-container .vega-bind {
+  position: absolute;
+  bottom: -25px;
+  left: 20px; /* adjust to align under y-axis */
+}
+
 .map-insight {
   max-width: 550px;             
   margin: 0 auto 60px auto;
@@ -573,6 +579,12 @@ body {
 
 .scatter-annotation strong {
   color: #5E57A3;
+}
+
+.scatter-wrapper .vega-bind {
+  position: absolute;
+  bottom: -25px;
+  left: 40px; /* adjust to align under y-axis */
 }
 
 .chart-box {
