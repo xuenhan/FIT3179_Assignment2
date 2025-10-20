@@ -225,7 +225,7 @@ body {
 
 #line-plot-container .vega-bind {
   position: absolute;
-  bottom: -25px;
+  bottom: -40px;
   left: 20px; /* adjust to align under y-axis */
 }
 
