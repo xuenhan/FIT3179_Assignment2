@@ -656,14 +656,14 @@ body {
 
 .expenditure-annotation {
   position: absolute;
-  bottom: -45px; /* Slightly more space below donut */
+  bottom: -35px; /* Slightly more space below donut */
   left: 70%;
   transform: translateX(-50%);
   background: #fff;
   border: 1.5px solid transparent;
   border-radius: 14px;
-  padding: 8px 10px;
-  width: 220px;
+  padding: 4px 8px;
+  width: 225px;
   font-family: 'Sora', sans-serif;
   font-size: 13px;
   line-height: 1.6;
