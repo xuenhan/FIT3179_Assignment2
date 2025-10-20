@@ -537,6 +537,44 @@ body {
   box-sizing: border-box;
 }
 
+.scatter-wrapper {
+  position: relative;     /* Enables absolute positioning inside */
+  display: inline-block;  /* Shrinks wrapper to chart width */
+}
+/* Overlay annotation */
+.scatter-annotation {
+  position: absolute;
+  top: 250px;              /* position relative to chart */
+  right: 0px;
+  left: 100px;
+  width: 150px;
+  background: #fff;
+  border: 1.5px solid transparent;
+  border-radius: 14px;
+  padding: 8px 14px;
+  font-family: 'Sora', sans-serif;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #333;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 0 4px 12px rgba(90, 80, 160, 0.15),
+              0 2px 4px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  z-index: 5;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scatter-annotation:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(90, 80, 160, 0.2),
+              0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.scatter-annotation strong {
+  color: #5E57A3;
+}
+
 .chart-box {
   flex: 1 1 50%;
   min-width: 400px;
@@ -595,6 +633,54 @@ body {
   display: block;
   height: 0;
   break-after: column;
+}
+
+.radial-wrapper {
+  position: relative;       /* makes it a positioning context */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.expenditure-annotation {
+  position: absolute;
+  bottom: -45px; /* Slightly more space below donut */
+  left: 70%;
+  transform: translateX(-50%);
+  background: #fff;
+  border: 1.5px solid transparent;
+  border-radius: 14px;
+  padding: 8px 10px;
+  width: 220px;
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #333;
+  text-align: center;
+  z-index: 5;
+
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+
+  /* soft floating shadow */
+  box-shadow: 0 4px 12px rgba(90, 80, 160, 0.15),
+              0 2px 4px rgba(0, 0, 0, 0.05);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.expenditure-annotation:hover {
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0 6px 16px rgba(90, 80, 160, 0.2),
+              0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.expenditure-annotation::before {
+  display: none; /* no arrow for cleaner overlay look */
+}
+
+.expenditure-annotation strong {
+  color: #5E57A3;
 }
 
 .section-label {

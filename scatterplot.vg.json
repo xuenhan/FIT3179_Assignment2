@@ -59,7 +59,7 @@
         },
         "tooltip": [
             {"field": "state", "type": "nominal", "title": "State"},
-            {"field": "year", "type": "ordinal"},
+            {"field": "year", "type": "ordinal", "title": "Year"},
             {"field": "income_mean", "type": "quantitative", "title": "Mean Income (RM)"},
             {"field": "Gini", "type": "quantitative", "title": "Gini Coefficient", "format": ".2f"}
         ]

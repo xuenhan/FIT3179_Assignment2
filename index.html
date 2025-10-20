@@ -112,7 +112,12 @@
     <div class="section-label">Expenditure</div>
     <div class="expenditure-container">
         <div id="stacked_bar_chart" class="chart-box"></div>
-        <div id="radial_chart" class="chart-box"></div>
+        <div class="radial-wrapper">
+            <div id="radial_chart" class="chart-box"></div>
+            <div class="expenditure-annotation">
+                <p><strong>Essential expenses dominate</strong>, reflecting cautious spending habits and limited capacity for lifestyle choices.</p>
+            </div>
+        </div>
     </div>
     <div class="expenditure-explainer">
         <h4 class="context-header">Household Spending Patterns</h4>
@@ -123,8 +128,7 @@
         <p>Urbanised regions, particularly <span class = "explanation-highlight">Central Region</span>, sustain higher spending, reflecting their
         <span class = "explanation-highlight">strong purchasing power and higher living costs</span>. Meanwhile, <span class = "explanation-highlight">East Malaysia and East Coast</span> show modest expenditure, reinforcing the urban-rural divide.</p>
     
-        <p>Across categories, most spendings concentrate on essential needs like <span class = "explanation-highlight">housing, food and utilities</span>, highlighting limited flexibility for discretionary expenses. This suggests that many households still remain sensititve to 
-        inflationary pressures, prioritising necessities over lifestyle and leisure.</p>
+        <p>Across categories, most spendings concentrate on essential needs like <span class = "explanation-highlight">housing, food and utilities</span>, highlighting limited flexibility for lifestyle choices and continued sensitivity to inflation.</p>
     </div>
 </section>
 
@@ -132,15 +136,22 @@
 <section class = "section-card">
     <div class="section-label">Household & Income Inequality</div>
     <div class="expenditure-container">
-        <div id="scatterplot" class="chart-box"></div>
+        <div class="scatter-wrapper">
+            <div id="scatterplot" class="chart-box"></div>
+
+            <div class="scatter-annotation">
+                <strong>Higher income doesn’t guarantee lower inequality,</strong> 
+                as richer states like Kuala Lumpur still show higher Gini coefficients.
+            </div>
+        </div>
         <div id="heatmap" class="chart-box"></div>
     </div>
     <div class="expenditure-explainer">
         <h4 class="context-header">Insights on Household & Income Inequality</h4>
         <p>Urbanised states like <span class = "explanation-highlight">Kuala Lumpur and Selangor</span> maintain <span class = "explanation-highlight">higher household income</span> but also exhibit <span class = "explanation-highlight">uneven income distribution</span>, suggesting that economic gains remain concentrated among wealthier groups.
-        Less developed states like <span class = "explanation-highlight">Kelantan and Perlis</span> continue to record lower incomes, reflecting slower development progress.</p>
+        Less developed states like <span class = "explanation-highlight">Kelantan and Perlis</span> record lower incomes, reflecting slower growth.</p>
 
-        <p>Meanwhile, <span class = "explanation-highlight">household numbers</span> have steadily increased nationwide, particularly in <span class = "explanation-highlight">industrialised states like Kuala Lumpur and Selangor</span>, indicating <span class = "explanation-highlight">continued urban migration and economic centralisation</span>. Together, these trends underscore how Malaysia's household expansion coexists with enduring income inequality across regions.</p>
+        <p>Meanwhile, <span class = "explanation-highlight">household numbers</span> have steadily increased nationwide, particularly in <span class = "explanation-highlight">industrialised regions</span>, highlights <span class = "explanation-highlight">ongoing urban migration and economic centralisation</span>. Together, these trends underscore how Malaysia's household expansion coexists with enduring income inequality across regions.</p>
     </div>
 </section>
 
@@ -160,7 +171,7 @@
             <li><a href="https://data.gov.my/data-catalogue/hh_profile_state" target="_blank">https://data.gov.my/data-catalogue/hh_profile_state</a></li>
             <li><a href="https://data.gov.my/data-catalogue/hh_inequality_state" target="_blank">https://data.gov.my/data-catalogue/hh_inequality_state</a></li>
             <li><a>https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Fpremium-ai-image%2F3d-financial-objects-with-graphs-charts-purple-background-perfect-economic-concepts_276056297.htm&psig=AOvVaw2F8eZliZqda6-v_3ObrdhL&ust=1760529355170000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOiv4YjRo5ADFQAAAAAdAAAAABAE
-</a></li>
+    </a></li>
         </ul>
     </div>
 </footer>
